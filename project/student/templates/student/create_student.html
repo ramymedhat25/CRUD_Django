@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% load static %} {% static
+'bootstrap4/css/bootstrap.min.css' %} {% block body %}
+<form method="POST" action="{% url 'create_student' %}">
+  {% csrf_token %}
+  <h1>Create Student</h1>
+  <div class="form-container">
+    <label for="firstname">First Name</label><br />
+    <input type="text" id="firstname" name="firstname" required /><br />
+    <label for="lastname">Last Name</label><br />
+    <input type="text" id="lastname" name="lastname" required /><br />
+    <label for="age">Age of Student</label><br />
+    <input type="text" id="age" name="age" /><br />
+    <input type="submit" class="registerbtn" value="Submit" />
+  </div>
+</form>
+
+{% endblock body %}
